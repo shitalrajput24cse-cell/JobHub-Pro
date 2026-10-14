@@ -1,0 +1,1 @@
+<?php require "db.php";$u=require_role("recruiter");$s=$pdo->prepare("SELECT * FROM jobs WHERE recruiter_id=? ORDER BY posted_at DESC");$s->execute([$u["id"]]);done($s->fetchAll());?>

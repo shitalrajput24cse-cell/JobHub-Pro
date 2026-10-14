@@ -1,0 +1,1 @@
+<?php require "db.php";$u=require_role("seeker");$s=$pdo->prepare("SELECT a.id,a.status,a.applied_at,j.title,j.company FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.user_id=? ORDER BY a.applied_at DESC");$s->execute([$u["id"]]);done($s->fetchAll());?>

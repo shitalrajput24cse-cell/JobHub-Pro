@@ -1,0 +1,1 @@
+<?php require "db.php";$_SESSION=[];session_destroy();done(["success"=>true]);?>

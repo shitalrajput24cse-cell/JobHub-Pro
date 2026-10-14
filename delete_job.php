@@ -1,0 +1,1 @@
+<?php require "db.php";$u=require_role("recruiter");$d=input();$s=$pdo->prepare("DELETE FROM jobs WHERE id=? AND recruiter_id=?");$s->execute([(int)($d["id"]??0),$u["id"]]);done(["success"=>$s->rowCount()>0,"message"=>$s->rowCount()?"Job deleted.":"Job not found."]);?>
